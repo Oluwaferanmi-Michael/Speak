@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "581772824821",
+    "project_id": "speak-388805",
+    "storage_bucket": "speak-388805.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581772824821:android:e554b87a0c38d6bcc935bc",
+        "android_client_info": {
+          "package_name": "com.example.speak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "581772824821-r91ofb3glff151357ou4h795s5af0d3q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.speak",
+            "certificate_hash": "64790c20ebb261accc5cdc37e7fee49ead78ba3c"
+          }
+        },
+        {
+          "client_id": "581772824821-r5srtrj156b6k8u695to57g2d0nc21fi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVhAWtnnonlaTP95J_2LML2invcC7VTUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "581772824821-3r3ljs1odk698k14rqhgm2l0a7o4utts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

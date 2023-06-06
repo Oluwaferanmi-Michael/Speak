@@ -1,19 +1,31 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:speak/routes.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'core/Util/Theme/screen_util.dart';
+import 'firebase_options.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
+  runApp(const ProviderScope(child: MyApp()));
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return ScreenUtil(
+
+      builder: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        title: 'Speak',
+        routerConfig: router,
+        /// refer to the routes page for [initial page]
       ),
     );
   }
