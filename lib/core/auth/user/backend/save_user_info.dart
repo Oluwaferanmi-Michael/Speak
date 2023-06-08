@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:speak/core/util/constants/firebase_collection_names.dart';
 import 'package:speak/core/util/constants/firebase_field_names.dart';
 
-import 'models/user_model_payload.dart';
+import '../models/user_model_payload.dart';
 
 @immutable
 class SaveUserInfo {

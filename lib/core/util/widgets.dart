@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 // import 'package:google_fonts/google_fonts.dart';
 import 'package:speak/core/Models/enums.dart';
 import 'package:speak/core/Util/utils.dart';
+import 'package:speak/core/util/strings.dart';
 
 // Brand button
 class Button extends StatelessWidget {
@@ -64,12 +66,12 @@ class Button extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16.w),
                   color: (secondary == true) ? transparent : primaryPink),
               child: Center(
-                  child: Text(buttonLabel!,
-                      // style: GoogleFonts.poppins(
-                          // fontWeight: FontWeight.w600,
-                          // fontSize: 18.w,
-                          // color: text
-                          // )
+                  child: Text(buttonLabel ?? Strings.labelHere,
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18.w,
+                          color: text
+                          )
                         )
                       )
                     )

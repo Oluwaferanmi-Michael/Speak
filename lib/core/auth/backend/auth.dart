@@ -14,7 +14,7 @@ class Authenticator {
 
   bool get isLoggedIn => userId != null;
 
-  String? get displayName => currentUser?.displayName;
+  String? get displayName => currentUser?.displayName ?? '';
 
   String? get email => currentUser?.email;
 
@@ -66,6 +66,8 @@ class Authenticator {
       if (e.code == Constants.accountExistsWithDifferentCredential &&
           email != null &&
           credential != null) {
+
+            
             // Check what provider does the email contiain
         final provider = await FirebaseAuth.instance.fetchSignInMethodsForEmail(email);
 
@@ -83,7 +85,8 @@ class Authenticator {
   // signIn with Email and Password
   Future<AuthResult> signInWithEmailAndPassword({required String email, required String password}) async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+      final credential = EmailAuthProvider.credential(email: email, password: password);
+      await FirebaseAuth.instance.signInWithCredential(credential);
       return AuthResult.success;
 
     } on FirebaseAuthException catch (error) {

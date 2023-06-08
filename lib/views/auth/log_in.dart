@@ -1,18 +1,24 @@
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:speak/core/auth/providers/auth_provider.dart';
 import 'package:speak/core/util/strings.dart';
-import 'package:speak/views/Auth/auth_widgets.dart';
+import 'package:speak/views/auth/components/auth_widgets.dart';
 import 'package:speak/routes.dart';
-
+import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../core/Util/utils.dart';
 import '../../core/Util/widgets.dart';
+import '../../core/auth/providers/auth_actions_provider.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-
+class LoginScreen extends HookConsumerWidget {
+  const LoginScreen({super.key});
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final emailController = useTextEditingController();
+    final passwordController = useTextEditingController();
+    
     return Scaffold(
         body: Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 42.h),
@@ -26,15 +32,17 @@ class LoginScreen extends StatelessWidget {
             children: [
               Text(
                 Strings.login,
-                  // style: GoogleFonts.poppins(
-                  //     fontSize: 24, fontWeight: FontWeight.bold, color: text)
+                  style: GoogleFonts.poppins(
+                      fontSize: 24, fontWeight: FontWeight.bold, color: text)
                   ),
               Gap(height: 21.h),
-              const AuthTextField(
+              AuthTextField(
+                controller: emailController,
                 label: Strings.emailOrUsername,
               ),
               Gap(height: 12.h),
-              const AuthTextField(
+              AuthTextField(
+                controller: passwordController,
                 label: Strings.password,
               ),
               
@@ -51,33 +59,46 @@ class LoginScreen extends StatelessWidget {
                   Expanded(
                     child: Text(
                       Strings.keepMeLoggedIn,
-                      // style: GoogleFonts.poppins(
-                      //   fontSize: 12.w,
-                      //   color: black,
-                      // ),
+                      style: GoogleFonts.poppins(
+                        fontSize: 12.w,
+                        color: black,
+                      ),
                     ),
                   ),
+
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () async {
+                      final email = emailController.text;
+                      await ref.read(authActionsProvider.notifier).sendPasswordResetLink(email: email);
+                    },
                     child: Text(
                       Strings.forgotPassword,
-                      // style: GoogleFonts.poppins(
-                      //     fontSize: 12.w,
-                      //     color: black,
-                      //     decoration: TextDecoration.underline),
+                      style: GoogleFonts.poppins(
+                          fontSize: 12.w,
+                          color: black,
+                          decoration: TextDecoration.underline),
                     ),
                   )
                 ],
               ),
               Gap(height: 140.h),
-              const Button(
+
+              Button(
                 buttonLabel: Strings.login,
+                onTap: () async {
+                  await ref.watch(authStateProvider.notifier).signIn(
+                    email: emailController.text,
+                    password: passwordController.text
+                    );
+                }
               ),
+
               Gap(height: 12.h),
+
               Text(
                 Strings.dontHaveAnAccount,
-                // style: GoogleFonts.poppins(
-                //     fontSize: 12.w, color: black.withOpacity(.5)),
+                style: GoogleFonts.poppins(
+                    fontSize: 12.w, color: black.withOpacity(.5)),
               ),
               Button(
                 onTap: () => context.push(Routes.signUp),

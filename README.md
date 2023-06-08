@@ -4,7 +4,11 @@ Text to Speech app for audiences with any form of speech or hearing deficiency
 ## App Completion Requirements
 
 ### Authentiaction
-- User signUp with google, Phone number, email/pasword
+- User signUp with google, email/pasword
+    - Auth Funtions(Helpers)
+        - email validation and confirmation ✅
+        - forgot password ✅
+    - error handling ✅
 - Create UserId for User Identification/other functionality
 
 ### Contact Saving
@@ -24,4 +28,6 @@ include cards users can use for fast speech
 
 ### Speech-to-Text
 - convert other peoples speech to text
+
+### App Settings
 

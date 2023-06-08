@@ -12,18 +12,15 @@ class UserInfoModel extends MapView<String, String>{
   final UserId userId;
   final String displayName;
   final String email;
-  final String? password;
 
   UserInfoModel({
     required this.userId,
     required this.displayName,
     required this.email,
-    this.password,
   }) : super ({
     FirebaseFieldName.displayName : displayName,
     FirebaseFieldName.email : email,
     FirebaseFieldName.userId : userId,
-    FirebaseFieldName.password: password ?? '',
   });
 
 
@@ -33,7 +30,7 @@ class UserInfoModel extends MapView<String, String>{
     required UserId userId
   }) : this(
       userId: userId,
-      displayName: json[FirebaseFieldName.displayName] ?? '',
+      displayName: json[FirebaseFieldName.displayName],
       email: json[FirebaseFieldName.email]);
 
 @override
@@ -41,11 +38,10 @@ bool operator ==(covariant UserInfoModel other) => identical(this, other) ||
   runtimeType == other.runtimeType &&
   userId == other.userId &&
   displayName == other.displayName &&
-  email == other.email &&
-  password == other.password;
+  email == other.email;
   
   @override
-  int get hashCode => Object.hashAll([displayName, email, userId, password]);
+  int get hashCode => Object.hashAll([displayName, email, userId]);
   
 
 
