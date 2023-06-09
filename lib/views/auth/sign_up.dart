@@ -59,7 +59,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   Gap(height: 21.h),
                     
                   AuthTextField(
-                    validator: (email) => email != null && !EmailValidator.validate(email) ? Strings.pleaseCheckYourEmail : null ,
+                    validator: (email) => email != null && !EmailValidator.validate(email) ? Strings.pleaseCheckYourEmail : null,
                     controller: emailController,
                     label: Strings.email,
                     hintText: Strings.emailHint,
@@ -70,7 +70,8 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   ),
                     
                   AuthTextField(
-                    validator: (password) => password != null && password.length < 6 ? Strings.passwordMustbeMoreThan : null ,
+                    validator: (password) => password != null && password.length < 6 ? Strings.passwordMustbeMoreThan : null,
+                    obscure: true,
                     controller: passwordController,
                     label: Strings.password,
                     hintText: Strings.passwordHint,
@@ -85,7 +86,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                     buttonLabel: Strings.signUp,
                     onTap: () async {
                       // perform signUp and navigate to home on success
-      
+    
                       final form = formKey.currentState!;
       
                       if (form.validate()){

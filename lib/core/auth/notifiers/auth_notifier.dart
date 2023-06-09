@@ -57,11 +57,14 @@ class AuthStateNotifier extends StateNotifier<AuthState> {
 
     if (result == AuthResult.success && userId != null){
       saveUserInfo(userId: userId);
+    } else if (result == AuthResult.failure) {
+      return;
     }
 
     final future = AuthState(authResult: AuthResult.success, isLoading: false, userId: userId);
 
     state = future;
+
     }
   
 
@@ -87,7 +90,7 @@ class AuthStateNotifier extends StateNotifier<AuthState> {
     String? password
   }) => _saveUserInfo.saveUserInfo(
     userId: userId,
-    displayName: _authenticator.displayName!,
+    displayName: _authenticator.displayName,
     email: _authenticator.email!,
     password: password ?? ''
   );

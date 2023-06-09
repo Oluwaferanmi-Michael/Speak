@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:speak/core/Util/widgets.dart';
 
 import '../../core/Models/enums.dart';
@@ -17,13 +18,13 @@ class OnboardingText extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-          Text(title,),
-              // style: GoogleFonts.poppins(
-              //     fontSize: 24, fontWeight: FontWeight.bold)),
+          Text(title,
+              style: GoogleFonts.poppins(
+                  fontSize: 24, fontWeight: FontWeight.bold)),
           Text(
-            sub,),
-              // style: GoogleFonts.poppins(
-              //   fontSize: 16,
+            sub,
+              style: GoogleFonts.poppins(
+                fontSize: 16,),),
         ]));
   }
 }
@@ -70,8 +71,8 @@ class Page1 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            child: Image.asset(image),
             width: 321.w,
+            child: Image.asset(image),
           ),
           OnboardingText(title: title, sub: body)
         ]);

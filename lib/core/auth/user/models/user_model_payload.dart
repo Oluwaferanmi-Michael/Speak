@@ -13,11 +13,9 @@ class UserInfoModelPayload extends MapView<String, String> {
     required UserId userId,
     required String displayName,
     required String email,
-    required String password,
   }) : super({
     FirebaseFieldName.userId : userId,
     FirebaseFieldName.displayName : displayName,
     FirebaseFieldName.email : email,
-    FirebaseFieldName.password: password,
   });
 }

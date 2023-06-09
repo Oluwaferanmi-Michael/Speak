@@ -8,14 +8,16 @@ class AuthActionsNotifier extends StateNotifier<bool> {
   
   final _authAction = const AuthActions();
 
-  Future<void> sendPasswordResetLink({
+  Future<bool> sendPasswordResetLink({
     required String email
   }) async {
     try {
       _authAction.forgotPassWord(email: email);
       state = true;
+      return state;
     } catch (e) {
       state = false;
+      return state;
     }
   }
 }

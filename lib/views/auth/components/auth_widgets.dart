@@ -6,10 +6,12 @@ import 'package:speak/core/util/utils.dart';
 
 class AuthTextField extends StatelessWidget {
   final TextEditingController controller;
-  final String? Function(dynamic)? validator;
+  final String? Function(String?)? validator;
   final String? hintText;
   final String? label;
+  final bool? obscure;
   const AuthTextField({
+    this.obscure,
     required this.controller,
     this.validator,
     this.hintText, this.label, Key? key}) : super(key: key);
@@ -19,12 +21,13 @@ class AuthTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label ?? 'label here',
+        Text(label ?? '',
             style: GoogleFonts.poppins(
                 fontSize: 12.w, fontWeight: FontWeight.bold, color: text)
             ),
         TextFormField(
-          autovalidateMode: AutovalidateMode.always,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          obscureText: obscure ?? false,
           validator: validator,
           controller: controller,
           decoration: InputDecoration(

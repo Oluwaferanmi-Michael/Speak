@@ -35,10 +35,10 @@ class SaveUserInfo {
       }
 
 
-      final payLoad = UserInfoModelPayload(userId: userId, displayName: displayName, email: email, password: password);
+      final payLoad = UserInfoModelPayload(userId: userId, displayName: displayName, email: email);
 
       // if no create new user
-      FirebaseFirestore.instance.collection(
+      await FirebaseFirestore.instance.collection(
         FirebaseCollectionName.users
         ).add(
           payLoad

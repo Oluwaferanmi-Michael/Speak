@@ -33,6 +33,10 @@ static const phoneNumberHint = '403 576 90**';
 static const passwordHint = '*********';
 static const phoneNumber = 'phonenumber';
 static const emailOrUsername = 'email or username';
+static const enterYourEmail = 'Please Enter your email to recieve a password reset link';
+static const sendLink = 'send link';
+static const passwordResetLinkSent = 'A password reset link has been sent to your email';
+static const thankYou = 'Thank You';
 
 // Errors
 static const pleaseCheckYourEmail = 'Please check your email, it might be wrong';
@@ -40,7 +44,6 @@ static const passwordMustbeMoreThan = 'Password must be at least 6 characters';
 static const invalidEmail = 'invalid email please type in the correct email';
 
 // something good
-
 static const success = 'success';
 
 // Placeholders

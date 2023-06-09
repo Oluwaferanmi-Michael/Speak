@@ -9,7 +9,7 @@ Text to Speech app for audiences with any form of speech or hearing deficiency
         - email validation and confirmation ✅
         - forgot password ✅
     - error handling ✅
-- Create UserId for User Identification/other functionality
+- Create UserId for User Identification/other functionality ✅
 
 ### Contact Saving
 - Ability to import contacts and message
