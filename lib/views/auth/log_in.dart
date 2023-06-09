@@ -96,7 +96,9 @@ class LoginScreen extends HookConsumerWidget {
                     await ref.watch(authStateProvider.notifier).signIn(
                       email: emailController.text,
                       password: passwordController.text
-                      );
+                      ).then((value){
+                        
+                      });
                   }
                 ),
         

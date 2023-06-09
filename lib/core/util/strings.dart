@@ -49,6 +49,21 @@ static const success = 'success';
 // Placeholders
 static const labelHere = 'label Here';
 
+// Intro Screen
+static const welcome = 'Hey Welcome';
+static const callBoldStatement = 'you can maker calls and we\'ll take care of the rest';
+static const communicateWithCards = 'Use or make cards to communicate';
+static const cards = 'Cards';
+static const chat = 'Chat';
+static const talkWithAChatFormat = 'Talk to friends using a chat format';
+static const draw = 'Draw';
+static const drawWhatYouMean = 'Draw what you mean or take the time off ';
+static const speechToText = 'Speech to Text';
+static const speechTranslatedToText = 'Your friends speech get translated to text for you';
+static const textToSpeech = 'Text to Speech';
+static const speakByDevice = 'Have what you type get spoken by your device';
+
+
 
 const Strings._();
 }

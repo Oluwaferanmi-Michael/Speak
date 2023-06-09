@@ -18,6 +18,9 @@ class Routes {
   static const authPage = '/authPage';
   static const intro = '/introScreen';
   static const forgotPassword = '/forgotPasswordScreen';
+  static const settings = '/settings';
+
+  const Routes._();
 }
 
 final router = GoRouter(initialLocation: Routes.authPage, routes: routes);

@@ -61,7 +61,6 @@ class Chat extends ConsumerWidget {
                                   keyboardType: TextInputType.multiline,
                                   maxLines: null,
                                   minLines: null,
-                                  // expands: true,
                                   cursorRadius: const Radius.circular(16),
                                   cursorColor: primaryPink,
                                   decoration: InputDecoration(
