@@ -1,6 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../Models/chat_message_model.dart';
+import '../../models/chat_message_model.dart';
 
 class ChatNotifier extends StateNotifier<List<ChatMessageModel>>{
   ChatNotifier() : super(<ChatMessageModel>[]);

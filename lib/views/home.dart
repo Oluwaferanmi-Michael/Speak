@@ -3,8 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:speak/views/stt_screen.dart';
-import 'package:speak/views/tts_screen.dart';
-import 'package:speak/core/controllers/bottom_nav_provider.dart';
+import '../core/controllers/providers/chat_provider.dart';
 import 'package:speak/core/Util/utils.dart';
 
 import '../core/util/strings.dart';
@@ -13,10 +12,8 @@ import 'chat_screen.dart';
 import 'draw_screen.dart';
 
 class Home extends ConsumerWidget {
-  final int? selectedPage;
   const Home({
     Key? key,
-    this.selectedPage
     }) : super(key: key);
 
   @override
@@ -25,7 +22,7 @@ class Home extends ConsumerWidget {
     final page = ref.watch(bottomNavProvider);
 
     return Scaffold(
-      body: screens[selectedPage ?? page],
+      body: screens[page],
       bottomNavigationBar: BottomNavigationBar(
           onTap: (value) {
             nav.changeScreenValue(value);

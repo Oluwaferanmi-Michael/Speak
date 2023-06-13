@@ -7,7 +7,7 @@ import 'package:speak/core/Util/utils.dart';
 import 'package:speak/core/Util/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../core/controllers/chat_provider.dart';
+import '../core/controllers/providers/chat_provider.dart';
 
 class Chat extends ConsumerWidget {
   const Chat({Key? key}) : super(key: key);

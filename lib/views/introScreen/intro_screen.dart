@@ -45,40 +45,40 @@ class IntroScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(Strings.welcome,
-            style: GoogleFonts.poppins(
-                fontSize: 24.h,
-                fontWeight: FontWeight.w600
-              ),),
+            // Text(Strings.welcome,
+            // style: GoogleFonts.poppins(
+            //     fontSize: 24.h,
+            //     fontWeight: FontWeight.w600
+            //   ),),
 
-            Gap(height: 42.h,),
+            // Gap(height: 42.h,),
 
-            Text(Strings.callBoldStatement,
-              style: GoogleFonts.poppins(
-                fontSize: 16.w
-              ),
-              ),
+            // Text(Strings.callBoldStatement,
+            //   style: GoogleFonts.poppins(
+            //     fontSize: 16.w
+            //   ),
+            //   ),
 
-            Gap(height: 12.h,),
+            // Gap(height: 12.h,),
 
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Button(
-                  type: ButtonType.medium,
-                ),
-                Button(
-                  type: ButtonType.medium, 
-                ),
-              ]
-            ),
+            // const Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     Button(
+            //       type: ButtonType.medium,
+            //     ),
+            //     Button(
+            //       type: ButtonType.medium, 
+            //     ),
+            //   ]
+            // ),
 
-            Gap(
-              height: 42.h
-            ),
+            // Gap(
+            //   height: 42.h
+            // ),
 
-            const Text(Strings.callBoldStatement),
-            Gap(height: 12.h,),
+            // const Text(Strings.callBoldStatement),
+            // Gap(height: 12.h,),
 
 
             const AltButton(
