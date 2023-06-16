@@ -8,7 +8,7 @@ import 'package:speak/core/util/strings.dart';
 
 // Brand button
 class Button extends StatelessWidget {
-  final ButtonType? type;
+  final ButtonType type;
   final String? buttonLabel;
   final IconData? icon;
   final bool? secondary;
@@ -20,7 +20,7 @@ class Button extends StatelessWidget {
       this.secondary = false,
       this.icon,
       this.buttonLabel,
-      this.type,
+      this.type = ButtonType.long,
       this.onTap,
       Key? key})
       : super(key: key);

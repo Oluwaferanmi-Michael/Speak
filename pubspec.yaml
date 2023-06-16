@@ -39,6 +39,9 @@ dependencies:
   email_validator: ^2.1.17
   envied: ^0.3.0+3
   analyzer: ^5.13.0
+  audioplayers: ^4.1.0
+  dio: ^5.2.1+1
+  path_provider: ^2.0.15
   
   
 

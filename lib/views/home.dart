@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:speak/views/stt_screen.dart';
-import '../core/controllers/providers/chat_provider.dart';
+import '../core/controllers/providers/bottom_nav_provider.dart';
 import 'package:speak/core/Util/utils.dart';
 
 import '../core/util/strings.dart';

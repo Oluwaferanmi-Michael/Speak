@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:speak/core/controllers/bottom_nav_provider.dart';
+import 'package:speak/core/controllers/providers/bottom_nav_provider.dart';
 import 'package:speak/core/util/utils.dart';
 
 import '../../../routes.dart';

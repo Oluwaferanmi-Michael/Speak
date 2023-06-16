@@ -9,6 +9,9 @@ class FirebaseFieldName {
   static const displayName = 'display_name';
   static const userId = 'uid';
   static const password = 'password';
+  static const text = 'text';
+  static const textId = 'text_id';
+  static const audio = 'text_audio';
 
   const FirebaseFieldName._();
 }

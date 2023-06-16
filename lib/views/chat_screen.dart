@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:speak/views/ChatScreen/chat_widgets.dart';
-import 'package:speak/core/Models/chat_message_model.dart';
-import 'package:speak/core/Models/enums.dart';
+import 'package:speak/core/models/chat_message_model.dart';
+import 'package:speak/core/models/enums.dart';
 import 'package:speak/core/Util/utils.dart';
 import 'package:speak/core/Util/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
