@@ -5,7 +5,8 @@ import 'package:speak/core/text_to_speech/constants/constants.dart';
 import 'package:speak/core/text_to_speech/models/text_to_speech_payload.dart';
 import 'dart:io';
 
-import '../../models/typdefs/typedefs.dart';
+import '../../models/typedefs/typedefs.dart';
+
 
 class TextSpeechBaseClient {
   TextSpeechBaseClient();

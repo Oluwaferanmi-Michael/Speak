@@ -1,7 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
-import 'package:speak/core/models/typdefs/typedefs.dart';
+import 'package:speak/core/models/typedefs/typedefs.dart';
 import 'package:speak/core/util/constants/firebase_field_names.dart';
 
 // MapView collection Object helps create the toJson constructor by calling a super class on the UserModel

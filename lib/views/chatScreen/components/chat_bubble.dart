@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:speak/core/Util/utils.dart';
 
 class ChatBubble extends StatelessWidget {
@@ -27,9 +27,9 @@ class ChatBubble extends StatelessWidget {
       child: Align(
         alignment: Alignment.topRight,
         child: Text(message,
-            // style: GoogleFonts.poppins(
-            //   fontSize: 12,
-            // )
+            style: GoogleFonts.poppins(
+              fontSize: 12,
+            )
             ),
       ),
       // height: 24,

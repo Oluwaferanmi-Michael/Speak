@@ -4,11 +4,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:speak/views/stt_screen.dart';
 import '../core/controllers/providers/bottom_nav_provider.dart';
-import 'package:speak/core/Util/utils.dart';
+import 'package:speak/core/util/utils.dart';
 
 import '../core/util/strings.dart';
 import 'cards_screen.dart';
-import 'chat_screen.dart';
+import '../views/chatScreen/chat_screen.dart';
 import 'draw_screen.dart';
 
 class Home extends ConsumerWidget {

@@ -3,7 +3,7 @@ import '../constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:speak/core/auth/models/auth_reult_enum.dart';
-import 'package:speak/core/models/typdefs/typedefs.dart';
+import 'package:speak/core/models/typedefs/typedefs.dart';
 
 class Authenticator {
   const Authenticator();

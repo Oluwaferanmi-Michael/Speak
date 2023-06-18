@@ -10,6 +10,10 @@ class SpeechKeys{
   static const error = 'error';
   static const text = 'text';
   static const eta = 'eta';
+
+  static const fileName = 'file_name';
+  static const textId = 'text_id';
+  static const audioFile = 'audio_file';
   
   const SpeechKeys._();
 }

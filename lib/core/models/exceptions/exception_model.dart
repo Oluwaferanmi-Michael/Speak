@@ -1,27 +1,18 @@
 
 
-import 'package:speak/core/util/extensions/ext.dart';
-
-class AppException implements Exception {
+class AppExceptions implements Exception {
   final String message;
-  AppException({
-    required this.message,
-  });
 
-  void log() => message.log();
+const AppExceptions({
+  this.message = 'error'
+});
 
-  @override
-  toString() => message;
+
+@override
+  String toString() => message;
 }
 
 
-class FetchDataException extends AppException{
-  FetchDataException({
-    message
-  }) : super(
-      message: 'Error During Communication'
-      );
+class FetchDataException extends AppExceptions {
+  const FetchDataException({super.message = 'Error During Communication'});
 }
-
-
-

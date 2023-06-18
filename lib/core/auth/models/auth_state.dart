@@ -1,5 +1,5 @@
-import 'package:speak/core/models/typdefs/typedefs.dart';
 
+import '../../models/typedefs/typedefs.dart';
 import 'auth_reult_enum.dart';
 
 class AuthState{

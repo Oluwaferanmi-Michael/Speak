@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:google_fonts/google_fonts.dart';
-import 'package:speak/core/Models/enums.dart';
+import 'package:speak/core/models/enums.dart';
 import 'package:speak/core/Util/utils.dart';
 import 'package:speak/core/util/strings.dart';
 
@@ -10,7 +10,7 @@ import 'package:speak/core/util/strings.dart';
 class Button extends StatelessWidget {
   final ButtonType type;
   final String? buttonLabel;
-  final IconData? icon;
+  final Widget? icon;
   final bool? secondary;
   final void Function()? onTap;
 
@@ -38,7 +38,7 @@ class Button extends StatelessWidget {
                 color: primaryPink,
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: Center(child: Icon(icon))));
+              child: Center(child: icon)));
     } else if (type == ButtonType.medium) {
       return InkWell(
           onTap: onTap,
@@ -52,7 +52,7 @@ class Button extends StatelessWidget {
                   color: (secondary == true) ? transparent : primaryPink),
               child: Center(
                   child: (buttonLabel == null)
-                      ? Icon(icon)
+                      ? icon
                       : Text(buttonLabel!))));
     } else {
       return InkWell(

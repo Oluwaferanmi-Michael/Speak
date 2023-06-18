@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:speak/core/Util/widgets.dart';
 
-import '../../core/Models/enums.dart';
+import '../../core/models/enums.dart';
 
 class OnboardingText extends StatelessWidget {
   final String title;
@@ -49,7 +49,7 @@ class OnboardingButtons extends StatelessWidget {
           onTap: rightOnTap,
           secondary: false,
           type: ButtonType.medium,
-          icon: Icons.arrow_forward,
+          icon: const Icon(Icons.arrow_forward),
         )
       ],
     );

@@ -5,7 +5,7 @@ import 'package:speak/core/auth/backend/auth.dart';
 import 'package:speak/core/auth/models/auth_state.dart';
 import 'package:speak/core/auth/user/backend/save_user_info.dart';
 
-import '../../models/typdefs/typedefs.dart';
+import '../../models/typedefs/typedefs.dart';
 import '../models/auth_reult_enum.dart';
 
 class AuthStateNotifier extends StateNotifier<AuthState> {

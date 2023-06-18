@@ -9,7 +9,6 @@ enum ButtonType{
   icon,
 }
 
-
 enum MessageFormat{
   text,
   image,
