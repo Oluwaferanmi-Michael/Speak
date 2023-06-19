@@ -10,7 +10,7 @@ import '../../core/Util/illustrations.dart';
 import '../../core/Util/strings.dart';
 import '../../routes.dart';
 import 'components/alt_button.dart';
-import 'components/intro_sreen_constants.dart';
+import 'components/intro_screen_constants.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
@@ -54,8 +54,8 @@ class IntroScreen extends StatelessWidget {
             Gap(height: 42.h,),
 
             
-
-            ListView.separated(
+            Expanded(
+              child: ListView.separated(
               itemCount: IntroScreenConstants.titles.length,
               itemBuilder: (context, index) {
                 return AltButton(
@@ -66,44 +66,9 @@ class IntroScreen extends StatelessWidget {
                 );
               },
               
-              separatorBuilder: (context, index) => Gap(height: 12.h,),),
-
-            // const AltButton(
-            //   icon: Icon(Icons.extension_outlined),
-            //   title: Strings.cards,
-            //   value: 0,
-            //   subtitle: Strings.communicateWithCards,
-            // ),
-
+              separatorBuilder: (context, index) => Gap(height: 12.h,),)),
             
 
-            // const AltButton(
-            //   icon: Icon(Icons.chat_bubble_outline),
-            //   title: Strings.chat,
-            //   value: 1,
-            //   subtitle: Strings.talkWithAChatFormat,
-            // ),
-            // Gap(height: 12.h,),
-            // const AltButton(
-            //   icon: Icon(Icons.change_history_outlined),
-            //   title: Strings.draw,
-            //   value: 2,
-            //   subtitle: Strings.drawWhatYouMean,
-            // ),
-            // Gap(height: 12.h,),
-            // const AltButton(
-            //   icon: Icon(Icons.play_arrow_outlined),
-            //   title: Strings.speechToText,
-            //   subtitle: Strings.speechTranslatedToText,
-            //   value: 3,
-            // ),
-            // Gap(height: 12.h,),
-            // const AltButton(
-            //   icon: Icon(Icons.volume_up_outlined),
-            //   title: Strings.textToSpeech,
-            //   value: 4,
-            //   subtitle: Strings.speakByDevice,
-            // ),
           ]
         )),
     );

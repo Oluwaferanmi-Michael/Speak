@@ -7,25 +7,25 @@ import '../../../core/util/strings.dart';
 class IntroScreenConstants{
 
   static const titles = [
-    Strings.cards,
     Strings.chat,
+    Strings.cards,
     Strings.draw,
     Strings.speechToText, 
-    Strings.textToSpeech,
+    // Strings.textToSpeech,
   ];
   static const subtitles = [
-    Strings.communicateWithCards,
     Strings.talkWithAChatFormat,
+    Strings.communicateWithCards,
     Strings.drawWhatYouMean,
     Strings.speechTranslatedToText,  
-    Strings.speakByDevice,
+    // Strings.speakByDevice,
   ];
   static const icons = [
-    Icon(Icons.extension_outlined),
     Icon(Icons.chat_bubble_outline),
+    Icon(Icons.extension_outlined),
     Icon(Icons.change_history_outlined),
     Icon(Icons.play_arrow_outlined), 
-    Icon(Icons.volume_up_outlined),
+    // Icon(Icons.volume_up_outlined),
   ];
   const IntroScreenConstants._();
 }

@@ -58,22 +58,6 @@ class LoginScreen extends HookConsumerWidget {
                   children: [
         
                   Gap(height: 8.h),
-                    // Checkbox(
-                    //     fillColor: MaterialStateProperty.all(grey),
-                    //     shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(5)),
-                        
-                    //     value: false,
-                    //     onChanged: (value) {}),
-                    // Expanded(
-                    //   child: Text(
-                    //     Strings.keepMeLoggedIn,
-                    //     style: GoogleFonts.poppins(
-                    //       fontSize: 12.w,
-                    //       color: black,
-                    //     ),
-                    //   ),
-                    // ),
         
                     GestureDetector(
                       onTap: () => context.push(Routes.forgotPassword),
@@ -96,9 +80,8 @@ class LoginScreen extends HookConsumerWidget {
                     await ref.watch(authStateProvider.notifier).signIn(
                       email: emailController.text,
                       password: passwordController.text
-                      ).then((value){
-                        
-                      });
+                      );
+                      
                   }
                 ),
         

@@ -76,7 +76,7 @@ class MessageWidget extends ConsumerWidget {
                 onTap: () {
                   final toSpeechNotifier = ref.watch(textToSpeechProvider.notifier);
 
-                  if (messageController.text.isEmpty == false) {
+                  if (messageController.text.isNotEmpty) {
                     messageNotifier.addMessage(
                       ChatMessageModel(
                         message: messageController.value.text,

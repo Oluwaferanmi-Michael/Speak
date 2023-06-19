@@ -9,3 +9,9 @@ extension Log on Object {
 extension FullPath on String{
   String get fullPath => 'assets/images/$this';
 }
+
+extension IdParameter on String {
+  Map<String, String> get param =>  {
+    'id' : this
+  };
+}

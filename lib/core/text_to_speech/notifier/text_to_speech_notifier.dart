@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -6,6 +8,7 @@ import 'package:speak/core/text_to_speech/backend/base_client.dart';
 import 'package:speak/core/text_to_speech/constants/api_status_strings.dart';
 import 'package:speak/core/text_to_speech/models/generated_speech_model.dart';
 import 'package:speak/core/text_to_speech/models/text_to_speech_payload.dart';
+import 'package:speak/core/util/extensions/ext.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../models/typedefs/typedefs.dart';
@@ -30,16 +33,19 @@ class TextToSpeechNotifier extends StateNotifier<IsLoading> {
     isLoading = true;
 
     final id = await _sendTextToService(text: text);
+    id.log();
 
     final url = await _getTextAudio(id: id);
+    url?.log();
 
-    if (!url.contains('https')){
+    if (!url!.contains('https')){
       return;
     }
 
     final audio = await _fetchAudioFromFiles(url: url, fileName: text);
 
-    player.play(UrlSource(audio));
+    await player.play(DeviceFileSource(audio));
+    await player.dispose();
 
     isLoading = false;
   }
@@ -54,11 +60,13 @@ class TextToSpeechNotifier extends StateNotifier<IsLoading> {
     }
     final response = TextToSpeechRequest.fromJson(json: request);
 
+    await Future.delayed(Duration(seconds: response.eta));
+
     return response.id;
   }
 
 
-  Future<String> _getTextAudio({
+  Future<String?> _getTextAudio({
     required String id
   }) async {
     var request = await _api.getAudioStream(id: id);
@@ -92,14 +100,16 @@ class TextToSpeechNotifier extends StateNotifier<IsLoading> {
 
     final dio = Dio();
 
-    final savePath = await getTemporaryDirectory();
+    final directory = await getTemporaryDirectory();
+
+    File savePath = File('${directory.path}$fileName.wav');
 
     dio.downloadUri(
       Uri.parse(url),
-      '${savePath.path} $fileName.wav'
+      savePath.path
     );
 
-    final audioFile = '${savePath.path}/$fileName.wav';
+    final audioFile = savePath.path;
 
     return audioFile;
   }

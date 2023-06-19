@@ -17,12 +17,12 @@ class TextToSpeechPayload extends MapView<String, String>{
 }
 
 class TextToSpeechRequest{
-  final String? eta;
+  final int eta;
   final TextId id;
 
   TextToSpeechRequest.fromJson({
     required Map<String, dynamic> json
   }) : 
     id = json[SpeechKeys.id],
-    eta = json[SpeechKeys.jobTime];
+    eta = json[SpeechKeys.eta];
 }

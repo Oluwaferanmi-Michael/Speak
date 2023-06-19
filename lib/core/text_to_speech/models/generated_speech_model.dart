@@ -4,7 +4,7 @@ import 'speech_keys.dart';
 class GeneratedSpeechModel {
   final String id;
   final String status;
-  final String url;
+  final String? url;
   final int? jobTime;
   final String? error;
   final int? eta;
@@ -13,8 +13,8 @@ class GeneratedSpeechModel {
     required this.id,
     required this.status,
     required this.url,
-    required this.jobTime,
-    required this.error,
+    this.jobTime,
+    this.error,
     this.eta
   });
   
@@ -32,10 +32,10 @@ class GeneratedSpeechModel {
     }) : 
       id = json[SpeechKeys.id],
       error = json[SpeechKeys.error] ?? '',
-      eta = json[SpeechKeys.eta] ?? '',
+      eta = json[SpeechKeys.eta] ?? 0,
       status = json[SpeechKeys.status],
-      jobTime = json[SpeechKeys.jobTime] ?? '',
-      url = json[SpeechKeys.url];
+      jobTime = json[SpeechKeys.jobTime] ?? 0,
+      url = json[SpeechKeys.url] ?? '';
 
     @override
     bool operator ==(covariant GeneratedSpeechModel other) => 

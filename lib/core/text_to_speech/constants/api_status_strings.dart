@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 class Status{
   static const success = 'success';
   static const processing = 'processing';
-  static const error = 'error';
+  static const error = 'fail';
 
   const Status._();
 }

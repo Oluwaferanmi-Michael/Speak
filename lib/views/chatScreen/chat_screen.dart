@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/controllers/providers/chat_provider.dart';
-import '../chatScreen/components/messge_widget.dart';
+import 'components/message_widget.dart';
 import 'components/chat_bubble.dart';
 
 class Chat extends ConsumerWidget {
