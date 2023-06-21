@@ -49,7 +49,7 @@ class Home extends ConsumerWidget {
             backgroundColor: primaryPink,
               elevation: 0,
               onPressed: () => drawNotifier.clear(),
-              child: const Icon(Icons.clear_all_rounded),
+              child: const Icon(Icons.clear),
             ),
     );
   }
