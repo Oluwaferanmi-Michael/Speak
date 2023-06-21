@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:speak/core/draw/providers/draw_provider.dart';
 import 'package:speak/views/stt_screen.dart';
 import '../core/controllers/providers/bottom_nav_provider.dart';
 import 'package:speak/core/util/utils.dart';
@@ -9,7 +10,7 @@ import 'package:speak/core/util/utils.dart';
 import '../core/util/strings.dart';
 import 'cards_screen.dart';
 import '../views/chatScreen/chat_screen.dart';
-import 'draw_screen.dart';
+import 'drawScreen/draw_screen.dart';
 
 class Home extends ConsumerWidget {
   const Home({
@@ -20,6 +21,7 @@ class Home extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final nav = ref.watch(bottomNavProvider.notifier);
     final page = ref.watch(bottomNavProvider);
+    final drawNotifier = ref.watch(drawProvider.notifier);
 
     return Scaffold(
       body: screens[page],
@@ -41,12 +43,13 @@ class Home extends ConsumerWidget {
           type: BottomNavigationBarType.fixed,
           items: items),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: page == 0 || page == 3
+      floatingActionButton: page != 2
           ? null
           : FloatingActionButton(
+            backgroundColor: primaryPink,
               elevation: 0,
-              onPressed: () => nav.changeScreenValue(3),
-              child: const Icon(Icons.mic),
+              onPressed: () => drawNotifier.clear(),
+              child: const Icon(Icons.clear_all_rounded),
             ),
     );
   }
@@ -59,7 +62,6 @@ const items = [
   BottomNavigationBarItem(
       icon: Icon(
         Icons.play_arrow_outlined,
-        // color: Colors.white,
       ),
       label: Strings.speechToText),
 ];

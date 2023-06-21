@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:audioplayers/audioplayers.dart';
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
@@ -17,17 +16,13 @@ class TextToSpeechNotifier extends StateNotifier<IsLoading> {
   TextToSpeechNotifier(): super(false);
 
   final _api = TextSpeechBaseClient();
-  final audioPlayer = AudioPlayer();
-
   final textId = const Uuid().v4();
 
-  final player = AudioPlayer();
-  
 
   set isLoading(bool value) => value = state;
 
 
-  Future<void> convertTextToSpeech({
+  Future<String> convertTextToSpeech({
     required String text
   }) async {
     isLoading = true;
@@ -39,15 +34,14 @@ class TextToSpeechNotifier extends StateNotifier<IsLoading> {
     url?.log();
 
     if (!url!.contains('https')){
-      return;
+      return 'invalid url';
     }
 
     final audio = await _fetchAudioFromFiles(url: url, fileName: text);
 
-    await player.play(DeviceFileSource(audio));
-    await player.dispose();
-
     isLoading = false;
+
+    return audio;
   }
 
 
@@ -58,10 +52,10 @@ class TextToSpeechNotifier extends StateNotifier<IsLoading> {
     if (request == null){
       return 'couldn\'t send text request';
     }
-    final response = TextToSpeechRequest.fromJson(json: request);
+    final response = TextToSpeechResponse.fromJson(json: request);
 
     await Future.delayed(Duration(seconds: response.eta));
-
+ 
     return response.id;
   }
 
@@ -100,11 +94,12 @@ class TextToSpeechNotifier extends StateNotifier<IsLoading> {
 
     final dio = Dio();
 
-    final directory = await getTemporaryDirectory();
+    final directory = await getApplicationDocumentsDirectory();
+    directory.log();
 
-    File savePath = File('${directory.path}$fileName.wav');
+    File savePath = File('${directory.path}/$fileName.wav');
 
-    dio.downloadUri(
+    await dio.downloadUri(
       Uri.parse(url),
       savePath.path
     );

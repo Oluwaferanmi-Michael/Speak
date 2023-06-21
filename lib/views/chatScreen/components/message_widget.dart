@@ -1,6 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:speak/core/controllers/providers/is_loading_provider.dart';
-import 'package:speak/core/text_to_speech/providers/text_to_speech_provider.dart';
 import 'package:speak/core/models/chat_message_model.dart';
 import 'package:speak/core/Util/utils.dart';
 import 'package:speak/core/Util/widgets.dart';
@@ -8,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/controllers/providers/chat_provider.dart';
+import '../../../core/controllers/providers/to_speech_provider.dart';
 import '../../../core/models/enums.dart';
 
 
@@ -23,7 +23,7 @@ class MessageWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isLoading = ref.read(isLoadingProvider);
+    final isLoading = ref.watch(isLoadingProvider);
 
     return Align(
       alignment: Alignment.bottomCenter,
@@ -72,18 +72,17 @@ class MessageWidget extends ConsumerWidget {
 
             Button(
               type: ButtonType.icon,
-                icon: isLoading ? const CircularProgressIndicator.adaptive() : const Icon(Icons.send),
-                onTap: () {
-                  final toSpeechNotifier = ref.watch(textToSpeechProvider.notifier);
-
+                icon: isLoading ? const CircularProgressIndicator.adaptive(): const Icon(Icons.send_rounded),
+                onTap: () async {
                   if (messageController.text.isNotEmpty) {
+                    ref.watch(toSpeechProvider(messageController.text));
                     messageNotifier.addMessage(
                       ChatMessageModel(
                         message: messageController.value.text,
                         messageType: MessageType.sender,
                         timeSent: DateTime.now().toLocal()));
 
-                    toSpeechNotifier.convertTextToSpeech(text: messageController.text);
+                    // await toSpeechNotifier.convertTextToSpeech(text: messageController.text);
                   }
               })
           ],

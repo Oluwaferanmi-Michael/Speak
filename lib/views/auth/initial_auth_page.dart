@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart%20';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:speak/core/auth/providers/is_logged_in_provider.dart';

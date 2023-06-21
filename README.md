@@ -21,10 +21,15 @@ Text to Speech app for audiences with any form of speech or hearing deficiency
 include cards users can use for fast speech
 
 ### Draw Features
-- allow users to draw objects
+- allow users to draw objects ✅
 
 ### Text-to-Speech
-- convert users text to speech for others
+- convert users text to speech for others ✅
+    - Consume API to convert text to speech ✅
+    - Get API response Time and Audio Url ✅
+    - Save file to device and playback ✅
+    - Save Audio File online to conserve space ✅
+    - Separate conversion and playback concerns ✅
 
 ### Speech-to-Text
 - convert other peoples speech to text
