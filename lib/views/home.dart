@@ -8,7 +8,7 @@ import '../core/controllers/providers/bottom_nav_provider.dart';
 import 'package:speak/core/util/utils.dart';
 
 import '../core/util/strings.dart';
-import 'cards_screen.dart';
+import 'cardScreen/cards_screen.dart';
 import '../views/chatScreen/chat_screen.dart';
 import 'drawScreen/draw_screen.dart';
 

@@ -19,6 +19,8 @@ class ColorPickerDialog extends AlertModel{
     message: ColorPicker(
       pickerColor: pickerColor,
       onColorChanged: onChanged,
+      enableAlpha: false,
+      
       labelTypes: const [],
       )
   );

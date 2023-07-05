@@ -14,3 +14,8 @@ enum MessageFormat{
   image,
   video
 }
+
+enum CardCategory{
+  defaultCards,
+
+}

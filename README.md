@@ -5,7 +5,7 @@ Text to Speech app for audiences with any form of speech or hearing deficiency
 
 ### Authentiaction
 - User signUp with google, email/pasword
-    - Auth Funtions(Helpers)
+    - Auth Funtions(Helpers) ✅
         - email validation and confirmation ✅
         - forgot password ✅
     - error handling ✅
@@ -19,6 +19,13 @@ Text to Speech app for audiences with any form of speech or hearing deficiency
 
 ### Standard AAC Cards
 include cards users can use for fast speech
+- Build card screen
+- Organise cards by categories
+- put cards in a pack
+- make a way to create cards
+- read cards into app
+- download cards
+- create offline database to store downloaded cards
 
 ### Draw Features
 - allow users to draw objects ✅

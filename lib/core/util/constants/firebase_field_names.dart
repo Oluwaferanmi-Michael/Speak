@@ -8,6 +8,7 @@ class FirebaseFieldName {
   static const createdAt = 'created_at';
   static const displayName = 'display_name';
   static const userId = 'uid';
+  static const cardId = 'card_id';
   static const password = 'password';
   static const text = 'text';
   static const textId = 'text_id';
