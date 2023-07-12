@@ -4,9 +4,6 @@ import 'package:speak/core/text_to_speech/models/speech_keys.dart';
 
 import '../../models/typedefs/typedefs.dart';
 
-
-
-
 class TextToSpeechPayload extends MapView<String, String>{
   final String text;
   TextToSpeechPayload({

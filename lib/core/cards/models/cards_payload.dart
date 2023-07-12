@@ -16,6 +16,4 @@ class CardsPayload extends MapView<String, String> {
     CardKey.createdBy : createdBy,
   });
 
-
-
 }

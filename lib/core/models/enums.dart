@@ -16,6 +16,6 @@ enum MessageFormat{
 }
 
 enum CardCategory{
-  defaultCards,
-
+  defaultCard,
+  customCard,
 }

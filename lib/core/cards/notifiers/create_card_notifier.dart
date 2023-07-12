@@ -2,7 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:speak/core/cards/models/cards_payload.dart';
+import 'package:speak/core/cards/models/custom_cards/custom_cards_payload.dart';
 import 'package:speak/core/models/typedefs/typedefs.dart';
 import 'package:speak/core/util/constants/firebase_collection_names.dart';
 import 'package:speak/core/util/constants/firebase_field_names.dart';
@@ -13,6 +13,7 @@ class CreateCardNotifier extends StateNotifier<IsLoading>{
 
   set isLoading(bool value) => state = value;
 
+  final cardId = const Uuid().v4();
 
   Future<void> create({
     required UserId userId,
@@ -27,6 +28,8 @@ class CreateCardNotifier extends StateNotifier<IsLoading>{
       FirebaseFieldName.userId, isEqualTo: userId
     ).limit(1).get();
 
+
+
     // update if exists
     if (card.docs.isNotEmpty) {
       card.docs.first.reference.update({
@@ -34,9 +37,11 @@ class CreateCardNotifier extends StateNotifier<IsLoading>{
       });
     }
 
-    final payload = CardsPayload(
-      text: text, image: image ?? '', createdBy: userId
-    );
+    final payload = CustomCardPayload(
+      createdBy: userId,
+      cardId: cardId,
+      text: text,
+      );
 
     await FirebaseFirestore.instance.collection(FirebaseFieldName.userId).add(payload);
 

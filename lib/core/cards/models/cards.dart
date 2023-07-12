@@ -31,13 +31,15 @@ class Cards {
   bool operator ==(covariant Cards other) => identical(this, other) ||
     runtimeType == other.runtimeType &&
     text == other.text &&
-    image == other.image;
+    image == other.image &&
+    createdBy == createdBy;
     
       @override
       int get hashCode => Object.hashAll(
         [
           text,
           image,
+          createdBy,
           runtimeType,
         ]
       );
